@@ -2,7 +2,7 @@ library(tidyverse)
 
 
 # Load data
-quakes <- read_csv(file = "Earthquake_data_analysis/earthquakes.csv")
+quakes <- read_csv(file = "R_project/Earthquake_data_analysis/earthquakes.csv")
 
 # Filter out explosions
 quakes <- quakes %>%
@@ -21,6 +21,7 @@ magnitudes <- quakes %>%
   mutate(magnitude_rounded = round(magnitude)) %>%
   group_by(magnitude_rounded) %>%
   summarise(n_quakes = n())
+
 
 # Bar plot magnitudes
 quakes %>%
